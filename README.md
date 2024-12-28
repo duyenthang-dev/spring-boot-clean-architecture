@@ -10,38 +10,38 @@ src/
 │   │   ├── domain/                         # Core Business Logic
 │   │   │   ├── entity/                     # Domain Entities (e.g., Course, User)
 │   │   │   ├── service/                    # Domain Services (Business Logic)
-│   │   │   └── event/                      # Domain Events (Optional)
 │   │   ├── application/                    # Application Layer
 │   │   │   ├── usecase/                    # Use Case Implementations
-│   │   │   │   └── CreateCourseUseCaseImpl.java
+│   │   │   │   └── VideoUseCaseImpl.java
 │   │   │   ├── port/                       # Input and Output Ports
 │   │   │   │   ├── input/                  # Input Ports (Use Case Interfaces)
-│   │   │   │   │   └── CreateCourseUseCase.java
+│   │   │   │   │   └── VideoUseCase.java
 │   │   │   │   └── output/                 # Output Ports (Repository Interfaces)
-│   │   │   │       └── CourseRepository.java
-│   │   ├── adapter/                        # Adapters Layer (Interface Implementations)
-│   │   │   ├── web/                        # Web Adapters
+│   │   │   │       └── VideoRepository.java
+│   │   ├── api/                            # Adapters Layer (Interface Implementations)
+│   │   │   ├── http/                       # Web Adapters
 │   │   │   │   ├── controller/             # REST Controllers
 │   │   │   │   │   └── CourseController.java
 │   │   │   │   ├── dto/                    # DTOs for Requests and Responses
 │   │   │   │   │   ├── request/            # Input DTOs
-│   │   │   │   │   │   └── CreateCourseRequest.java
+│   │   │   │   │   │   └── CreateVideoRequest.java
 │   │   │   │   │   └── response/           # Output DTOs
-│   │   │   │   │       └── CourseResponse.java
-│   │   │   └── persistence/                # Persistence Adapters
-│   │   │       ├── repository/             # Repository Implementations
-│   │   │       │   └── JpaCourseRepository.java
-│   │   │       ├── mapper/                 # Mappers (Entity ↔ Persistence Models)
-│   │   │       │   └── CourseMapper.java
-│   │   │       └── model/                  # Persistence Models (JPA Entities)
-│   │   │           └── CourseEntity.java
+│   │   │   │   │       └── CreateVideoResponse.java
+|   |   |   ├── rpc/                        # For rpc
+|   |   |   ├── graphQL/                    # For graphQL
+|   |   |   |
 │   │   ├── infrastructure/                 # Infrastructure Layer
 │   │   │   ├── configuration/              # Spring Boot Configurations
 │   │   │   │   └── AppConfig.java
-│   │   │   ├── security/                   # Security Configurations
-│   │   │   │   └── SecurityConfig.java
-│   │   │   ├── messaging/                  # Messaging Configurations
-│   │   │   │   └── KafkaConfig.java
+│   │   │   ├── security/                   # Security 
+│   │   │   ├── messaging/                  # Messaging 
+|   |   |   ├── persistence
+|   |   |   |   ├── repository/             # Repository Implementations
+│   │   │   |   │   └── VideoRepositoryImpl.java
+│   │   │   |   ├── mapper/                 # Mappers (Entity ↔ Persistence Models)
+│   │   │   |   │   └── VideoMapper.java
+│   │   │   |   └── entity/                  # Persistence Models (JPA Entities)
+│   │   │           └── VideoEntity.java
 │   │   │   └── external/                   # External Integrations
 │   │   │       ├── api/                    # External API Clients
 │   │   │       └── service/                # External Service Integrations
